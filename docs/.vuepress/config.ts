@@ -81,7 +81,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           // { text: 'GitHub技巧', link: '/pages/4c778760be26d8b3/' },
           // { text: 'Nodejs', link: '/pages/117708e0af7f0bd9/' },
           { text: 'MySQL', link: '/pages/f1315b/' },
-          { text: 'ElasticSearch', link: '/pages/927cf0/'  },
+          { text: 'ElasticSearch', link: '/pages/927cf0/' },
+          { text: 'Redis', link: '/pages/f2a5f6/'  },
         ],
       },
       {
@@ -170,9 +171,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: '/img/logo.svg',
-      name: 'Evan Xu',
-      slogan: '前端界的小学生',
+      avatar: '/img/logo.svg'
+      // name: 'Evan Xu',
+      // slogan: '前端界的小学生',
     },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
