@@ -83,6 +83,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: 'MySQL', link: '/pages/f1315b/' },
           { text: 'ElasticSearch', link: '/pages/927cf0/' },
           { text: 'Redis', link: '/pages/f2a5f6/'  },
+          { text: 'kafka', link: '/pages/0328dd/'  },
         ],
       },
       {

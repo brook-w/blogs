@@ -24,5 +24,8 @@
     "vuepress-plugin-zooming": "^1.1.7",
     "vuepress-theme-vdoing": "^1.12.7",
     "yamljs": "^0.3.0"
+  },
+  "dependencies": {
+    "mermaid": "^9.1.6"
   }
 }
