@@ -16,7 +16,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     '/': {
       lang: 'zh-CN',
       title: "Brook-w's blog",
-      description: '野生钢铁侠 int.Max-1',
+      description: '野生钢铁侠 {int.Max-1}',
     }
   },
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
@@ -26,45 +26,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 导航配置
     nav: [
       { text: '首页', link: '/' },
-      // {
-      //   text: '前端',
-      //   link: '/web/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
-      //   items: [
-      //     // 说明：以下所有link的值只是在相应md文件头部定义的永久链接（不是什么特殊编码）。另外，注意结尾是有斜杠的
-      //     {
-      //       text: '前端文章',
-      //       items: [
-      //         { text: 'JavaScript', link: '/pages/8143cc480faf9a11/' },
-      //       ],
-      //     },
-      //     {
-      //       text: '学习笔记',
-      //       items: [
-      //         { text: '《JavaScript教程》', link: '/note/javascript/' },
-      //         { text: '《JavaScript高级程序设计》', link: '/note/js/' },
-      //         { text: '《ES6 教程》', link: '/note/es6/' },
-      //         { text: '《Vue》', link: '/note/vue/' },
-      //         { text: '《React》', link: '/note/react/' },
-      //         {
-      //           text: '《TypeScript 从零实现 axios》',
-      //           link: '/note/typescript-axios/',
-      //         },
-      //         {
-      //           text: '《Git》',
-      //           link: '/note/git/',
-      //         },
-      //         {
-      //           text: 'TypeScript',
-      //           link: '/pages/51afd6/',
-      //         },
-      //         {
-      //           text: 'JS设计模式总结',
-      //           link: '/pages/4643cd/',
-      //         },
-      //       ],
-      //     },
-      //   ],
-      // },
       {
         text: '页面',
         link: '/ui/',
@@ -77,13 +38,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: '数据库',
         link: '/db/',
         items: [
-          // { text: '技术文档', link: '/pages/9a7ee40fc232253e/' },
-          // { text: 'GitHub技巧', link: '/pages/4c778760be26d8b3/' },
-          // { text: 'Nodejs', link: '/pages/117708e0af7f0bd9/' },
           { text: 'MySQL', link: '/pages/f1315b/' },
           { text: 'ElasticSearch', link: '/pages/927cf0/' },
-          { text: 'Redis', link: '/pages/f2a5f6/'  },
-          { text: 'kafka', link: '/pages/0328dd/'  },
+          { text: 'Redis', link: '/pages/f2a5f6/' },
+          { text: 'kafka', link: '/pages/0328dd/' },
         ],
       },
       {
@@ -172,9 +130,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: '/img/logo.svg'
-      // name: 'Evan Xu',
-      // slogan: '前端界的小学生',
+      avatar: '/img/logo.svg',
+      name: 'Brook-w',
+      slogan: '钢铁侠 {int.Max - 1} 号',
     },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
@@ -183,12 +141,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       icons: [
         {
           iconClass: 'icon-youjian',
-          title: '发邮件',
+          title: 'QQ邮件',
           link: 'mailto:1285837374@qq.com',
         },
-         {
-          iconClass: 'icon-youjian',
-          title: '发邮件',
+        {
+          iconClass: 'icon-gmail',
+          title: '谷歌邮件',
           link: 'mailto:wuxing416@gmail.com',
         },
         {
