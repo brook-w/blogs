@@ -27,11 +27,17 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     nav: [
       { text: '首页', link: '/' },
       {
-        text: '页面',
-        link: '/ui/',
+        text: 'Golang',
+        link: '/go/',
         items: [
-          { text: 'HTML', link: '/pages/8309a5b876fc95e3/' },
-          { text: 'CSS', link: '/pages/0a83b083bdf257cb/' },
+        ],
+      },
+      {
+        text: 'JAVA',
+        link: '/java/',
+        items: [
+          { text: 'SpringBoot Examples', link: '/pages/0b4fc3/' },
+          { text: 'Java 安装', link: '/pages/fc05f5/' },
         ],
       },
       {
@@ -41,21 +47,21 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: 'MySQL', link: '/pages/f1315b/' },
           { text: 'ElasticSearch', link: '/pages/927cf0/' },
           { text: 'Redis', link: '/pages/f2a5f6/' },
-          { text: 'kafka', link: '/pages/0328dd/' },
+          { text: 'Kafka', link: '/pages/0328dd/' },
         ],
       },
-      {
-        text: '更多',
-        link: '/more/',
-        items: [
-          { text: '学习', link: '/pages/f2a556/' },
-          { text: '面试', link: '/pages/aea6571b7a8bae86/' },
-          { text: '心情杂货', link: '/pages/2d615df9a36a98ed/' },
-          { text: '实用技巧', link: '/pages/baaa02/' },
-          { text: '友情链接', link: '/friends/' },
-        ],
-      },
-      { text: '关于', link: '/about/' },
+      // {
+      //   text: '更多',
+      //   link: '/more/',
+      //   items: [
+      //     { text: '学习', link: '/pages/f2a556/' },
+      //     { text: '面试', link: '/pages/aea6571b7a8bae86/' },
+      //     { text: '心情杂货', link: '/pages/2d615df9a36a98ed/' },
+      //     { text: '实用技巧', link: '/pages/baaa02/' },
+      //     { text: '友情链接', link: '/friends/' },
+      //   ],
+      // },
+      // { text: '关于', link: '/about/' },
       // {
       //   text: '收藏',
       //   link: '/pages/beb6c0bd8a66cea6/',
@@ -132,7 +138,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     blogger: {
       avatar: '/img/logo.svg',
       name: 'Brook-w',
-      slogan: '钢铁侠 {int.Max - 1} 号',
+      slogan: 'Iron Man int.Max - 1 ',
     },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)

@@ -19,7 +19,7 @@ features: # 可选的
   - title: 数据库
     details: 数据库、缓存、集群等文章
     link: /db/
-    imgUrl: /img/other.png
+    imgUrl: /img/db.png
 
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 # postList: detailed
@@ -84,3 +84,7 @@ features: # 可选的
 - **GitHub**: <https://github.com/xugaoyi>
 
 </br>   -->
+
+
+<!-- 设置 git 代理 -->
+<!-- https://zhuanlan.zhihu.com/p/481574024#:~:text=%E5%BD%93%E4%BD%A0%E4%B8%8D%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86%E6%97%B6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%8F%96%E6%B6%88%E4%B9%8B%E5%89%8D%E8%AE%BE%E7%BD%AE%E7%9A%84%E4%BB%A3%E7%90%86%E3%80%82%20git%20config%20--global%20--unset,http.proxy%20git%20config%20--global%20--unset%20https.proxy -->
