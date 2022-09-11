@@ -23,9 +23,8 @@
     "vuepress-plugin-thirdparty-search": "^1.0.2",
     "vuepress-plugin-zooming": "^1.1.7",
     "vuepress-theme-vdoing": "^1.12.7",
-    "yamljs": "^0.3.0"
+    "yamljs": "^0.3.0",
+    "vuepress-plugin-mermaidjs": "^1.9.1"
   },
-  "dependencies": {
-    "mermaid": "^9.1.6"
-  }
+  "dependencies": {}
 }
