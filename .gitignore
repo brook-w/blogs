@@ -22,3 +22,5 @@ urls.txt
 .DS_Store
 
 deploy.bat
+
+docs/.vuepress/dist.zip
