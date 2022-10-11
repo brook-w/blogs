@@ -27,9 +27,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     nav: [
       { text: '首页', link: '/' },
       {
-        text: 'Golang',
+        text: 'Go',
         link: '/go/',
         items: [
+          { text: 'Go 基础', link: '/pages/e42d50/' },
+          { text: 'Go 进阶', link: '/pages/448e07/' },
+          { text: 'Go 三方集成', link: '/pages/67cfbb/' },
         ],
       },
       {
@@ -82,7 +85,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       // },
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
-    logo: '/img/logo.svg', // 导航栏logo
+    logo: '/img/logo.png', // 导航栏logo
     repo: 'brook-w/image-hosting', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
@@ -137,8 +140,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 博主信息 (显示在首页侧边栏)
     blogger: {
       avatar: '/img/logo.svg',
-      name: 'Brook-w',
-      slogan: 'Iron Man int.Max - 1 ',
+      name: 'brook-w',
+      slogan: 'Web Ai & Embedded',
     },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
