@@ -53,6 +53,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: 'Kafka', link: '/pages/0328dd/' },
         ],
       },
+      {
+        text: '容器',
+        link: '/container/',
+        items: [
+          { text: '面试', link: '/pages/faadc3/' },
+        ],
+      },
       // {
       //   text: '更多',
       //   link: '/more/',
