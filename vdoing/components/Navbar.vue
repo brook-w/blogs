@@ -109,9 +109,9 @@ $navbar-horizontal-padding = 1.5rem;
   }
 
   .logo {
-    height: $navbarHeight - 1rem;
-    min-width: $navbarHeight - 1.4rem;
-    margin-top: -0.2rem;
+    height: $navbarHeight - 2.5rem;
+    min-width: $navbarHeight - 1.3rem;
+    margin-top: 0.6rem;
     margin-right: 0.5rem;
     vertical-align: top;
   }

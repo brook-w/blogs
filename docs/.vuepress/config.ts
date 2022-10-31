@@ -15,7 +15,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: "Brook-w's blog",
+      title: "BLOG",
       description: '野生钢铁侠 {int.Max-1}',
     }
   },
@@ -31,8 +31,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         link: '/go/',
         items: [
           { text: 'Go 基础', link: '/pages/e42d50/' },
+          { text: 'Go Sample Project', link: '/pages/bb5a74/' },
           { text: 'Go 进阶', link: '/pages/448e07/' },
           { text: 'Go 三方集成', link: '/pages/67cfbb/' },
+          { text: 'Go 开源期刊', link: '' },
+          { text: 'Go 面试题', link: '/pages/ec0f51/' },
         ],
       },
       {
@@ -146,7 +149,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: '/img/logo.svg',
+      avatar: '/img/logo.png',
       name: 'brook-w',
       slogan: 'Web Ai & Embedded',
     },
@@ -199,7 +202,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
   head: [
-    ['link', { rel: 'icon', href: '/img/favicon.svg' }], //favicons，资源放在public文件夹
+    ['link', { rel: 'icon', href: '/img/favicon.ico' }], //favicons，资源放在public文件夹
     [
       'meta',
       {
@@ -331,7 +334,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   ],
 
   markdown: {
-    lineNumbers: true,
+    lineNumbers: false,
     extractHeaders: ['h2', 'h3', 'h4', 'h5', 'h6'], // 提取标题到侧边栏的级别，默认['h2', 'h3']
   },
 

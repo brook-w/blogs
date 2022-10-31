@@ -14,8 +14,8 @@ features: # 可选的
       imgUrl: /img/golang.png # 可选
     - title: 页面
       details: html(5)/css(3)，前端页面相关技术
-      link: /ui/
-      imgUrl: /img/ui.png
+      link: /java/
+      imgUrl: /img/java.png
     - title: 数据库
       details: 数据库、缓存、集群等
       link: /db/
