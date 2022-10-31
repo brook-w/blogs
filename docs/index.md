@@ -12,11 +12,11 @@ features: # 可选的
       details: 小巧的、高性能的、简单的跨平台编程语言
       link: /go/ # 可选
       imgUrl: /img/golang.png # 可选
-    - title: 页面
-      details: html(5)/css(3)，前端页面相关技术
+    - title: 爪洼
+      details: Abandoning...
       link: /java/
       imgUrl: /img/java.png
-    - title: 数据库
+    - title: Databases
       details: 数据库、缓存、集群等
       link: /db/
       imgUrl: /img/db.png
