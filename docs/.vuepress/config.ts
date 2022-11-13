@@ -62,6 +62,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         items: [
           { text: 'Docker', link: '/pages/aa442f/' },
           { text: 'Docker-Compose', link: '/pages/48a9e8/' },
+          { text: 'Kubernetes', link: '/pages/18ab06/' },
           { text: '面试', link: '/pages/faadc3/' },
         ],
       },

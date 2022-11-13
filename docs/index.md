@@ -12,10 +12,10 @@ features: # 可选的
       details: 小巧的、高性能的、简单的跨平台编程语言
       link: /go/ # 可选
       imgUrl: /img/golang.png # 可选
-    - title: 爪洼
-      details: Abandoning...
-      link: /java/
-      imgUrl: /img/java.png
+    - title: Kubernetes
+      details: 自动部署、扩缩和管理容器化应用程序
+      link: /container/
+      imgUrl: /img/k8s.png
     - title: Databases
       details: 数据库、缓存、集群等
       link: /db/
