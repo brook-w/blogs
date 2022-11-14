@@ -174,6 +174,7 @@ import Pagination from "@theme/components/Pagination";
 import BloggerBar from "@theme/components/BloggerBar";
 import CategoriesBar from "@theme/components/CategoriesBar";
 import TagsBar from "@theme/components/TagsBar";
+import storage from "good-storage";
 
 const MOBILE_DESKTOP_BREAKPOINT = 720; // refer to config.styl
 
@@ -191,7 +192,9 @@ export default {
 
       total: 0, // 总长
       perPage: 10, // 每页长
-      currentPage: 1, // 当前页
+      currentPage: 1, // 当前页,
+      bannerBgStyle: "",
+      showBanner: true,
     };
   },
   computed: {
@@ -207,42 +210,7 @@ export default {
       const { htmlModules } = this.$themeConfig;
       return htmlModules ? htmlModules.homeSidebarB : "";
     },
-    showBanner() {
-      // 当分页不在第一页时隐藏banner栏
-      return this.$route.query.p &&
-        this.$route.query.p != 1 &&
-        (!this.homeData.postList || this.homeData.postList === "detailed")
-        ? false
-        : true;
-    },
-    bannerBgStyle() {
-      let bannerBg = this.homeData.bannerBg;
-      if (!bannerBg || bannerBg === "auto") {
-        // 默认
-        if (this.$themeConfig.bodyBgImg) {
-          // 当有bodyBgImg时，不显示背景
-          return "";
-        } else {
-          // 网格纹背景
-          return "background: rgb(40,40,45) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABOSURBVFhH7c6xCQAgDAVRR9A6E4hLu4uLiWJ7tSnuQcIvr2TRYsw3/zOGGEOMIcYQY4gxxBhiDDGGGEOMIcYQY4gxxBhiDLkx52W4Gn1tuslCtHJvL54AAAAASUVORK5CYII=)";
-        }
-      } else if (bannerBg === "none") {
-        // 无背景
-        if (this.$themeConfig.bodyBgImg) {
-          return "";
-        } else {
-          return "background: var(--mainBg);color: var(--textColor)";
-        }
-      } else if (bannerBg.indexOf("background:") > -1) {
-        // 自定义背景样式
-        return bannerBg;
-      } else if (bannerBg.indexOf(".") > -1) {
-        // 大图
-        return `background: url(${this.$withBase(
-          bannerBg
-        )}) center center / cover no-repeat`;
-      }
-    },
+
     actionLink() {
       return {
         link: this.homeData.actionLink,
@@ -266,12 +234,17 @@ export default {
   beforeMount() {
     this.isMQMobile =
       window.innerWidth < MOBILE_DESKTOP_BREAKPOINT ? true : false; // vupress在打包时不能在beforeCreate(),created()访问浏览器api（如window）
+    this.showBanner = this.getShowBanner();
+    this.bannerBgStyle = this.getBannerBgStyle();
+    this.$bus.$on("modeChange", () => {
+      this.showBanner = this.getShowBanner();
+      this.bannerBgStyle = this.getBannerBgStyle();
+    });
   },
   mounted() {
     if (this.$route.query.p) {
       this.currentPage = Number(this.$route.query.p);
     }
-
     if (
       this.hasFeatures &&
       this.isMQMobile &&
@@ -296,6 +269,7 @@ export default {
   beforeDestroy() {
     clearTimeout(this.playTimer);
     this.slide && this.slide.destroy();
+    this.$bus.$off("modeChange");
   },
   watch: {
     "$route.query.p"() {
@@ -314,6 +288,43 @@ export default {
     },
   },
   methods: {
+    getShowBanner() {
+      return this.$route.query.p &&
+        this.$route.query.p != 1 &&
+        (!this.homeData.postList || this.homeData.postList === "detailed")
+        ? false
+        : true;
+    },
+    getBannerBgStyle() {
+      let bannerBg = this.homeData.bannerBg;
+      const mode = storage.get("cur_mode");
+      const result = this.$themeConfig.bodyBgImg.filter((s) => s.mode === mode);
+      if (!bannerBg || bannerBg === "auto") {
+        // 默认
+        if (result.length > 0) {
+          // 当有bodyBgImg时，不显示背景
+          return "";
+        } else {
+          // 网格纹背景
+          return "background: rgb(40,40,45) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABOSURBVFhH7c6xCQAgDAVRR9A6E4hLu4uLiWJ7tSnuQcIvr2TRYsw3/zOGGEOMIcYQY4gxxBhiDDGGGEOMIcYQY4gxxBhiDLkx52W4Gn1tuslCtHJvL54AAAAASUVORK5CYII=)";
+        }
+      } else if (bannerBg === "none") {
+        // 无背景
+        if (this.$themeConfig.bodyBgImg) {
+          return "";
+        } else {
+          return "background: var(--mainBg);color: var(--textColor)";
+        }
+      } else if (bannerBg.indexOf("background:") > -1) {
+        // 自定义背景样式
+        return bannerBg;
+      } else if (bannerBg.indexOf(".") > -1) {
+        // 大图
+        return `background: url(${this.$withBase(
+          bannerBg
+        )}) center center / cover no-repeat`;
+      }
+    },
     init() {
       clearTimeout(this.playTimer);
       this.slide = new BScroll(this.$refs.slide, {

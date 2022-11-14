@@ -3,7 +3,7 @@
  */
 import { resolve } from 'path'
 import { defineConfig4CustomTheme, UserPlugins } from 'vuepress/config'
-import { VdoingThemeConfig } from 'vuepress-theme-vdoing/types'
+import { VdoingThemeConfig } from '../../vdoing/types/index'
 import dayjs from 'dayjs'
 import baiduCode from './config/baiduCode' // 百度统计hm码
 import htmlModules from './config/htmlModules' // 自定义插入的html块
@@ -39,11 +39,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       {
-        text: 'JAVA',
-        link: '/java/',
+        text: '容器化',
+        link: '/container/',
         items: [
-          { text: 'SpringBoot Examples', link: '/pages/0b4fc3/' },
-          { text: 'Java 安装', link: '/pages/fc05f5/' },
+          { text: 'Kubernetes', link: '/pages/18ab06/' },
+          { text: 'Helm', link: '/pages/18ab06/' },
+          { text: 'Docker', link: '/pages/aa442f/' },
+          { text: 'Docker-Compose', link: '/pages/48a9e8/' },
+          { text: '面试', link: '/pages/faadc3/' },
         ],
       },
       {
@@ -57,15 +60,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       {
-        text: '容器',
-        link: '/container/',
+        text: 'JAVA',
+        link: '/java/',
         items: [
-          { text: 'Docker', link: '/pages/aa442f/' },
-          { text: 'Docker-Compose', link: '/pages/48a9e8/' },
-          { text: 'Kubernetes', link: '/pages/18ab06/' },
-          { text: '面试', link: '/pages/faadc3/' },
+          { text: 'SpringBoot Examples', link: '/pages/0b4fc3/' },
+          { text: 'Java 安装', link: '/pages/fc05f5/' },
         ],
       },
+      { text: '关于', link: '/about/' },
       // {
       //   text: '更多',
       //   link: '/more/',
@@ -77,7 +79,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       //     { text: '友情链接', link: '/friends/' },
       //   ],
       // },
-      // { text: '关于', link: '/about/' },
       // {
       //   text: '收藏',
       //   link: '/pages/beb6c0bd8a66cea6/',
@@ -116,19 +117,41 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // pageStyle: 'line', // 页面风格，可选值：'card'卡片 | 'line' 线（未设置bodyBgImg时才生效）， 默认'card'。 说明：card时背景显示灰色衬托出卡片样式，line时背景显示纯色，并且部分模块带线条边框
 
-    // bodyBgImg: [
-    //   'https://fastly.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175828.jpeg',
-    //   'https://fastly.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175845.jpeg',
-    //   'https://fastly.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175846.jpeg'
-    // ], // body背景大图，默认无。 单张图片 String | 多张图片 Array, 多张图片时隔bodyBgImgInterval切换一张。
-    // bodyBgImgOpacity: 0.5, // body背景图透明度，选值 0.1~1.0, 默认0.5
-    // bodyBgImgInterval: 15, // body多张背景图时的切换间隔, 默认15，单位s
-    // titleBadge: false, // 文章标题前的图标是否显示，默认true
-    // titleBadgeIcons: [ // 文章标题前图标的地址，默认主题内置图标
-    //   '图标地址1',
-    //   '图标地址2'
-    // ],
-    // contentBgStyle: 1, // 文章内容块的背景风格，默认无. 1 方格 | 2 横线 | 3 竖线 | 4 左斜线 | 5 右斜线 | 6 点状
+    bodyBgImg: [
+      {
+        url: "https://files.etoury.com/brook-pdf/img/dark-bg1.jpg",
+        mode: "dark",
+      },
+      {
+        url: "https://files.etoury.com/brook-pdf/img/dark-bg2.jpg",
+        mode: "dark",
+      },
+      {
+        url: "https://files.etoury.com/brook-pdf/img/dark-bg3.jpg",
+        mode: "dark",
+      },
+      {
+        url: "https://files.etoury.com/brook-pdf/img/dark-bg4.jpg",
+        mode: "dark",
+      },
+      {
+        url: "https://files.etoury.com/brook-pdf/img/dark-bg5.jpg",
+        mode: "dark",
+      },
+      {
+        url: "https://files.etoury.com/brook-pdf/img/light-bg1.jpg",
+        mode: "light",
+        opacity: 0.9
+      }
+    ], // body背景大图，默认无。 单张图片 String | 多张图片 Array, 多张图片时隔bodyBgImgInterval切换一张。
+    // // bodyBgImgOpacity: 0.5, // body背景图透明度，选值 0.1~1.0, 默认0.5
+    // // bodyBgImgInterval: 15, // body多张背景图时的切换间隔, 默认15，单位s
+    // // titleBadge: false, // 文章标题前的图标是否显示，默认true
+    // // titleBadgeIcons: [ // 文章标题前图标的地址，默认主题内置图标
+    // //   '图标地址1',
+    // //   '图标地址2'
+    // // ],
+    // contentBgStyle: 6, // 文章内容块的背景风格，默认无. 1 方格 | 2 横线 | 3 竖线 | 4 左斜线 | 5 右斜线 | 6 点状
 
     // updateBar: { // 最近更新栏
     //   showToArticle: true, // 显示到文章页底部，默认true
@@ -190,6 +213,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       copyrightInfo:
         'Brook-w | <a href="https://github.com/brook-w/blogs/blob/master/LICENSE" target="_blank">GPL License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
     },
+    // 备案信息
+    ICP: "京ICP备2020045721号-2",
 
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
     extendFrontmatter: {
@@ -210,7 +235,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       'meta',
       {
         name: 'keywords',
-        content: '技术文档,学习,面试,git,github,markdown,elasticsearch,c++,cpp,后端,java',
+        content: '技术文档,学习,面试,前端,kubernetes,k8s,go,golang,docker,github,markdown,elasticsearch,cpp,java',
       },
     ],
     // ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）

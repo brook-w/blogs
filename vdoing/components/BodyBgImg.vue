@@ -6,54 +6,78 @@
 </template>
 
 <script>
-import { type } from '../util'
+import storage from "good-storage";
+let timer = null;
 export default {
   data() {
     return {
-      bgImg: '',
-      opacity: 0.5
-    }
+      bgImg: "",
+      opacity: 0.5,
+    };
   },
+  created() {
+    this.setBodyBgImage();
+  },
+
   mounted() {
-    let { bodyBgImg, bodyBgImgOpacity, bodyBgImgInterval = 15 } = this.$themeConfig
-
-    if (type(bodyBgImg) === 'string') {
-      this.bgImg = bodyBgImg
-    } else if (type(bodyBgImg) === 'array') {
-      let count = 0
-      let timer = null
-
-      this.bgImg = bodyBgImg[count]
-      clearInterval(timer)
+    this.$bus.$on("modeChange", () => {
+      this.setBodyBgImage();
+    });
+  },
+  beforeDestroy() {
+    this.$bus.$off("modeChange");
+  },
+  methods: {
+    setBodyBgImage() {
+      let {
+        bodyBgImg,
+        bodyBgImgOpacity = 0.5,
+        bodyBgImgInterval = 5,
+      } = this.$themeConfig;
+      const mode = storage.get("cur_mode");
+      bodyBgImg = bodyBgImg.filter((s) => s.mode === mode);
+      if (bodyBgImg.length === 0) {
+        this.bgImg = "";
+        clearInterval(timer);
+        return;
+      }
+      let count = 0;
+      this.bgImg = bodyBgImg[count].url;
+      clearInterval(timer);
       timer = setInterval(() => {
         if (++count >= bodyBgImg.length) {
-          count = 0
+          count = 0;
         }
-        this.bgImg = bodyBgImg[count]
-
+        this.bgImg = bodyBgImg[count].url;
         // 预加载下一张图片
         if (bodyBgImg[count + 1]) {
-          const img = new Image()
-          img.src = bodyBgImg[count + 1]
+          const img = new Image();
+          img.src = bodyBgImg[count + 1].url;
+        }
+        if (bodyBgImg[count].opacity) {
+          this.opacity = bodyBgImg[count].opacity;
+        } else if (bodyBgImgOpacity !== undefined) {
+          this.opacity = bodyBgImgOpacity;
         }
       }, bodyBgImgInterval * 1000);
-    }
-
-    if (bodyBgImgOpacity !== undefined) {
-      this.opacity = bodyBgImgOpacity
-    }
-
-  }
-}
+      if (bodyBgImg[count].opacity) {
+        this.opacity = bodyBgImg[count].opacity;
+      } else if (bodyBgImgOpacity !== undefined) {
+        this.opacity = bodyBgImgOpacity;
+      }
+    },
+  },
+};
 </script>
 
 <style lang='stylus'>
-.body-bg
-  position fixed
-  left 0
-  top 0
-  z-index -999999
-  height 100vh
-  width 100vw
-  transition background 0.5s
+.body-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -999999;
+  height: 100vh;
+  width: 100vw;
+  transition: background 2s;
+}
 </style>

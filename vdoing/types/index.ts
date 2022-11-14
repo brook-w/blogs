@@ -37,11 +37,14 @@ export interface VdoingThemeConfig extends NoSidebar4DefaultThemeConfig {
    */
   pageStyle?: 'card' | 'line';
 
+
   /**
    * body背景大图链接。单张图片 string | 多张图片 string[], 多张图片时每隔15秒换一张。
+   * 深色背景 bodyDarkImg
+   * 浅色背景 bodyLightImg
    * @default ''
    */
-  bodyBgImg?: string | string[];
+  bodyBgImg?: { url: string, mode: string, opacity?: 0.1 | 0.2 | 0.3 | 0.4 | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1 }[];
 
   /**
    * body背景图透明度，选值 0.1 ~ 1.0
