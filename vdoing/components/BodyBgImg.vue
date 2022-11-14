@@ -1,12 +1,13 @@
 <template>
   <div
     class="body-bg"
-    :style="`background: url(${bgImg}) center center / cover no-repeat;opacity:${opacity}`"
+    :style="`background: url(${bgImg}) center center / cover no-repeat;opacity:${opacity};`"
   ></div>
 </template>
 
 <script>
 import storage from "good-storage";
+import EventBus from "eventing-bus";
 let timer = null;
 export default {
   data() {
@@ -19,20 +20,35 @@ export default {
     this.setBodyBgImage();
   },
 
+  beforeMount() {},
+
   mounted() {
-    this.$bus.$on("modeChange", () => {
+    EventBus.on("modeChange", () => {
       this.setBodyBgImage();
     });
   },
   beforeDestroy() {
-    this.$bus.$off("modeChange");
+    EventBus.unregisterCallbacksForEvent("modeChange");
   },
   methods: {
+    switchImg(e) {
+      if (e) {
+        this.setBodyBgImage();
+      } else {
+        this.bgImg = "";
+        clearInterval(timer);
+      }
+    },
+    forceUpdate() {
+      this.setBodyBgImage();
+      this.$forceUpdate();
+    },
     setBodyBgImage() {
+      clearInterval(timer);
       let {
         bodyBgImg,
         bodyBgImgOpacity = 0.5,
-        bodyBgImgInterval = 5,
+        bodyBgImgInterval = 15,
       } = this.$themeConfig;
       const mode = storage.get("cur_mode");
       bodyBgImg = bodyBgImg.filter((s) => s.mode === mode);
@@ -43,7 +59,6 @@ export default {
       }
       let count = 0;
       this.bgImg = bodyBgImg[count].url;
-      clearInterval(timer);
       timer = setInterval(() => {
         if (++count >= bodyBgImg.length) {
           count = 0;

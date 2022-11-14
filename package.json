@@ -28,5 +28,7 @@
     "vuepress-theme-vdoing": "^1.12.7",
     "yamljs": "^0.3.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "eventing-bus": "^2.0.1"
+  }
 }

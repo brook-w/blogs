@@ -67,9 +67,13 @@
 
     <Footer />
 
-    <Buttons ref="buttons" @toggle-theme-mode="toggleThemeMode" />
+    <Buttons
+      ref="buttons"
+      @toggle-theme-mode="toggleThemeMode"
+      @changeBodyBgImg="changeBodyBgImg"
+    />
 
-    <BodyBgImg v-if="bodyBgImgVisable" />
+    <BodyBgImg ref="bodyBgImg" />
 
     <!-- 自定义html插入左右下角的小窗口 -->
     <div
@@ -109,6 +113,7 @@ import BodyBgImg from "@theme/components/BodyBgImg";
 import { resolveSidebarItems } from "../util";
 import storage from "good-storage"; // 本地存储
 import _ from "lodash";
+import EventBus from "eventing-bus";
 
 const MOBILE_DESKTOP_BREAKPOINT = 719; // refer to config.styl
 const NAVBAR_HEIGHT = 58; // 导航栏高度
@@ -135,7 +140,6 @@ export default {
       themeMode: "auto",
       showWindowLB: true,
       showWindowRB: true,
-      bodyBgImgVisable: false,
     };
   },
   computed: {
@@ -241,7 +245,6 @@ export default {
     console.log("layout mode ", this.themeMode);
     storage.set("cur_mode", this.themeMode);
     this.setBodyClass();
-    this.bodyBgImgVisable = this.getBgImgVisable();
 
     // 引入图标库
     const social = this.$themeConfig.social;
@@ -254,10 +257,6 @@ export default {
     }
   },
   mounted() {
-    this.$bus.$on("modeChange", () => {
-      this.bodyBgImgVisable = this.getBgImgVisable();
-    });
-
     // 初始化页面时链接锚点无法跳转到指定id的解决方案
     const hash = document.location.hash;
     if (hash.length > 1) {
@@ -295,9 +294,7 @@ export default {
       }, 300)
     );
   },
-  beforeDestroy() {
-    this.$bus.$off("modeChange");
-  },
+
   watch: {
     isSidebarOpen() {
       if (this.isSidebarOpen) {
@@ -310,13 +307,8 @@ export default {
     },
   },
   methods: {
-    getBgImgVisable() {
-      const { bodyBgImg } = this.$themeConfig;
-      const mode = storage.get("cur_mode");
-      const result = bodyBgImg.filter((s) => s.mode === mode);
-      if (result.length > 0) {
-        return true;
-      }
+    changeBodyBgImg(e) {
+      this.$refs.bodyBgImg.swatchImg(e);
     },
     getHtmlStr(module) {
       const { htmlModules } = this.$themeConfig;
@@ -363,9 +355,8 @@ export default {
       }
       storage.set("mode", key);
       storage.set("cur_mode", this.themeMode);
-      this.$bus.$emit("modeChange", () => {
-        console.log("on modeChange");
-      });
+      EventBus.publish("modeChange");
+      this.$refs.bodyBgImg.forceUpdate();
     },
 
     // side swipe

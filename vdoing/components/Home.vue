@@ -175,6 +175,7 @@ import BloggerBar from "@theme/components/BloggerBar";
 import CategoriesBar from "@theme/components/CategoriesBar";
 import TagsBar from "@theme/components/TagsBar";
 import storage from "good-storage";
+import EventBus from "eventing-bus";
 
 const MOBILE_DESKTOP_BREAKPOINT = 720; // refer to config.styl
 
@@ -236,7 +237,7 @@ export default {
       window.innerWidth < MOBILE_DESKTOP_BREAKPOINT ? true : false; // vupress在打包时不能在beforeCreate(),created()访问浏览器api（如window）
     this.showBanner = this.getShowBanner();
     this.bannerBgStyle = this.getBannerBgStyle();
-    this.$bus.$on("modeChange", () => {
+    EventBus.on("modeChange", () => {
       this.showBanner = this.getShowBanner();
       this.bannerBgStyle = this.getBannerBgStyle();
     });
@@ -269,7 +270,7 @@ export default {
   beforeDestroy() {
     clearTimeout(this.playTimer);
     this.slide && this.slide.destroy();
-    this.$bus.$off("modeChange");
+    EventBus.unregisterCallbacksForEvent("modeChange");
   },
   watch: {
     "$route.query.p"() {
