@@ -46,6 +46,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: 'Helm', link: '' },
           { text: 'Docker', link: '/pages/aa442f/' },
           { text: 'Docker-Compose', link: '/pages/48a9e8/' },
+          { text: 'K8s二开', link: '/pages/908235/' },
           { text: '面试', link: '/pages/faadc3/' },
         ],
       },
@@ -67,6 +68,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: 'Java 安装', link: '/pages/fc05f5/' },
         ],
       },
+      // { text: 'SHOW ME', link: '/resume/' },
       { text: '关于', link: '/about/' },
       // {
       //   text: '更多',
@@ -142,7 +144,27 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         url: "https://files.etoury.com/brook-pdf/img/light-bg1.jpg",
         mode: "light",
         opacity: 0.9
-      }
+      },
+      {
+        url: "https://files.etoury.com/brook-pdf/img/light-bg2.jpg",
+        mode: "light",
+        opacity: 0.9
+      },
+      {
+        url: "https://files.etoury.com/brook-pdf/img/light-bg3.jpg",
+        mode: "light",
+        opacity: 0.9
+      },
+      {
+        url: "https://files.etoury.com/brook-pdf/img/light-bg4.jpg",
+        mode: "light",
+        opacity: 0.9
+      },
+      {
+        url: "https://files.etoury.com/brook-pdf/img/light-bg5.jpg",
+        mode: "light",
+        opacity: 0.9
+      },
     ], // body背景大图，默认无。 单张图片 String | 多张图片 Array, 多张图片时隔bodyBgImgInterval切换一张。
     // // bodyBgImgOpacity: 0.5, // body背景图透明度，选值 0.1~1.0, 默认0.5
     // // bodyBgImgInterval: 15, // body多张背景图时的切换间隔, 默认15，单位s
