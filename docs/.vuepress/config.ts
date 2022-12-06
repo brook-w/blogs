@@ -287,6 +287,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // mermaidjs
     'vuepress-plugin-mermaidjs',
+    'img-lazy',
 
 
     // 全文搜索。 ⚠️注意：此插件会在打开网站时多加载部分js文件用于搜索，导致初次访问网站变慢。如在意初次访问速度的话可以不使用此插件！（推荐：vuepress-plugin-thirdparty-search）
