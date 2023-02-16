@@ -124,22 +124,22 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         url: "https://files.etoury.com/brook-pdf/img/dark-bg1.jpg",
         mode: "dark",
       },
-      {
-        url: "https://files.etoury.com/brook-pdf/img/dark-bg2.jpg",
-        mode: "dark",
-      },
-      {
-        url: "https://files.etoury.com/brook-pdf/img/dark-bg3.jpg",
-        mode: "dark",
-      },
-      {
-        url: "https://files.etoury.com/brook-pdf/img/dark-bg4.jpg",
-        mode: "dark",
-      },
-      {
-        url: "https://files.etoury.com/brook-pdf/img/dark-bg5.jpg",
-        mode: "dark",
-      },
+      // {
+      //   url: "https://files.etoury.com/brook-pdf/img/dark-bg2.jpg",
+      //   mode: "dark",
+      // },
+      // {
+      //   url: "https://files.etoury.com/brook-pdf/img/dark-bg3.jpg",
+      //   mode: "dark",
+      // },
+      // {
+      //   url: "https://files.etoury.com/brook-pdf/img/dark-bg4.jpg",
+      //   mode: "dark",
+      // },
+      // {
+      //   url: "https://files.etoury.com/brook-pdf/img/dark-bg5.jpg",
+      //   mode: "dark",
+      // },
       {
         url: "https://files.etoury.com/brook-pdf/img/light-bg1.jpg",
         mode: "light",
@@ -150,21 +150,21 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         mode: "light",
         opacity: 0.9
       },
-      {
-        url: "https://files.etoury.com/brook-pdf/img/light-bg3.jpg",
-        mode: "light",
-        opacity: 0.9
-      },
-      {
-        url: "https://files.etoury.com/brook-pdf/img/light-bg4.jpg",
-        mode: "light",
-        opacity: 0.9
-      },
-      {
-        url: "https://files.etoury.com/brook-pdf/img/light-bg5.jpg",
-        mode: "light",
-        opacity: 0.9
-      },
+      // {
+      //   url: "https://files.etoury.com/brook-pdf/img/light-bg3.jpg",
+      //   mode: "light",
+      //   opacity: 0.9
+      // },
+      // {
+      //   url: "https://files.etoury.com/brook-pdf/img/light-bg4.jpg",
+      //   mode: "light",
+      //   opacity: 0.9
+      // },
+      // {
+      //   url: "https://files.etoury.com/brook-pdf/img/light-bg5.jpg",
+      //   mode: "light",
+      //   opacity: 0.9
+      // },
     ], // body背景大图，默认无。 单张图片 String | 多张图片 Array, 多张图片时隔bodyBgImgInterval切换一张。
     // // bodyBgImgOpacity: 0.5, // body背景图透明度，选值 0.1~1.0, 默认0.5
     // // bodyBgImgInterval: 15, // body多张背景图时的切换间隔, 默认15，单位s
@@ -184,7 +184,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // pageButton: false, // 是否显示快捷翻页按钮，默认true
 
     // 默认外观模式（用户未在页面手动修改过模式时才生效，否则以用户设置的模式为准），可选：'auto' | 'light' | 'dark' | 'read'，默认'auto'。
-    // defaultMode: 'auto',
+    defaultMode: 'dark',
 
     // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | <自定义>    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
     sidebar: 'structuring',
