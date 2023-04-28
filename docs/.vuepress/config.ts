@@ -61,6 +61,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       {
+        text: 'OpenStack',
+        link: '/openstack/',
+        items: [
+          { text: 'OpenStack', link: '/pages/5edf67/' },
+          { text: 'Ceph', link: '/pages/e8e9e8/' },
+        ],
+      },
+      {
         text: 'JAVA',
         link: '/java/',
         items: [
@@ -140,11 +148,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       //   url: "https://files.etoury.com/brook-pdf/img/dark-bg5.jpg",
       //   mode: "dark",
       // },
-      {
-        url: "https://files.etoury.com/brook-pdf/img/light-bg1.jpg",
-        mode: "light",
-        opacity: 0.9
-      },
+      // {
+      //   url: "https://files.etoury.com/brook-pdf/img/light-bg1.jpg",
+      //   mode: "light",
+      //   opacity: 0.9
+      // },
       {
         url: "https://files.etoury.com/brook-pdf/img/light-bg2.jpg",
         mode: "light",
