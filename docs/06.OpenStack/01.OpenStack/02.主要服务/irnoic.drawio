@@ -1,0 +1,82 @@
+<mxfile host="65bd71144e">
+    <diagram id="6-c8X4OYtf5Ug9su37A3" name="第 1 页">
+        <mxGraphModel dx="3045" dy="864" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="硬件驱动" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="350" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="loading temp&amp;nbsp;fs&lt;br style=&quot;font-size: 16px;&quot;&gt;initramfs" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="350" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;" edge="1" parent="1" source="5" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="loading root fs" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="413.5" y="350" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="loading kernel" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="600" y="350" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;a href=&quot;https://zhuanlan.zhihu.com/p/59639444&quot;&gt;基于Ironic实现X86裸机自动化装机实践与优化 - 知乎 (zhihu.com)&lt;/a&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="280" width="490" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="问题：需要解决 initramfs 用来适配目标物理机的硬件驱动" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="440" width="670" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="总节点数" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="690" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="健康" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="-70" y="690" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="网络节点" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="-70" y="780" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="存储节点" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="780" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="计算节点" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="690" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="控制节点" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="690" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="内容使用量" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="-70" y="860" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="cpu 使用量" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="860" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="内存总量" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="780" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="cpu 总核心" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="780" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="主机网络进出" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="860" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="主机系统盘" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="860" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="主机 磁盘IO" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="-70" y="940" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="openstack服务数量" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="940" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="总容器数量以及健康度" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="235" y="940" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

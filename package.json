@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "bp": "vuepress build docs && deploy.bat",
+    "bp": "vuepress build docs",
     "wdp": "wdp.bat",
     "deploy": "bash deploy.sh",
     "editFm": "node utils/editFrontmatter.js",
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "eventing-bus": "^2.0.1",
-    "file-saver": "^2.0.5"
+    "file-saver": "^2.0.5",
+    "oss": "^0.0.1"
   }
 }
