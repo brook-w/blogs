@@ -64,8 +64,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: 'OpenStack',
         link: '/openstack/',
         items: [
-          { text: 'OpenStack', link: '/pages/5edf67/' },
-          { text: 'Ceph', link: '/pages/e8e9e8/' },
+          { text: 'OpenStack', link: '/pages/f73190/' },
+        ],
+      },
+      {
+        text: 'Ceph',
+        link: '/ceph/',
+        items: [
+          { text: 'Ceph', link: '/pages/5edf67/' },
         ],
       },
       {
