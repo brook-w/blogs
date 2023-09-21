@@ -1,0 +1,14 @@
+{
+    "menu_items": {
+        "pxe": "\nLABEL Win10_EN-x64-x86_64\n\tMENU LABEL Win10_EN-x64-x86_64\n\tkernel /images/Win10_EN-x64-x86_64/pxeboot.n12",
+        "ipxe": "\n:Win10_EN-x64-x86_64\nkernel /images/Win10_EN-x64-x86_64/pxeboot.n12   initrd=initrd.magic\ninitrd /images/Win10_EN-x64-x86_64/boot.sdi\nboot\n\n"
+    },
+    "menu_labels": {
+        "ipxe": [
+            {
+                "name": "Win10_EN-x64-x86_64",
+                "display_name": "Win10_EN-x64-x86_64"
+            }
+        ]
+    }
+}
