@@ -24,3 +24,6 @@ urls.txt
 deploy.bat
 
 docs/.vuepress/dist.zip
+
+.chat
+.env
