@@ -27,3 +27,5 @@ docs/.vuepress/dist.zip
 
 .chat
 .env
+
+csdn/**.md
