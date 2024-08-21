@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "license": "GPL",
   "private": "false",
+  "engines": {
+    "node": "16.10.0"
+  },
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",

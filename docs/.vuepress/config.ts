@@ -39,6 +39,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       {
+        text: 'Rust',
+        link: '/rust/',
+        items: [
+          { text: 'Rust 速查表', link: '/pages/caf49f/' },
+        ],
+      },
+      {
         text: '容器化',
         link: '/container/',
         items: [
