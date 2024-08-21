@@ -35,7 +35,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: 'Go 进阶', link: '/pages/448e07/' },
           { text: 'Go 三方集成', link: '/pages/67cfbb/' },
           { text: 'Go 开源期刊', link: '' },
-          { text: 'Go 面试题', link: '/pages/ec0f51/' },
         ],
       },
       {
@@ -54,7 +53,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: 'Docker', link: '/pages/aa442f/' },
           { text: 'Docker-Compose', link: '/pages/48a9e8/' },
           { text: 'K8s二开', link: '/pages/908235/' },
-          { text: '面试', link: '/pages/faadc3/' },
         ],
       },
       {
