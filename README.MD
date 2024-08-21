@@ -78,7 +78,7 @@ stateDiagram
 export default{
     data(){
         return {
-            msg:"123"
+            msg:""
         }
     },
     created(){
