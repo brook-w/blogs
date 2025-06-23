@@ -62,7 +62,7 @@
             :to="`/categories/?category=${encodeURIComponent(item)}`"
             v-for="(item, index) in categories"
             :key="index"
-            >{{ item + " " }}</router-link
+            >{{ item + ' ' }}</router-link
           >
         </div>
       </div>
