@@ -1,17 +1,14 @@
 <template>
   <div>
-    <a style="font-size: 12px" @click="saveFile">download this drawio </a>
+    <a style="font-size: 12px" @click="saveFile">download</a>
     <div>
-      <div
-        v-if="loading"
-        style="
+      <div v-if="loading" style="
           width: 100%;
           height: 100px;
           display: flex;
           justify-content: center;
           align-content: center;
-        "
-      >
+        ">
         <img width="50" height="50" src="/assets/img/loading.gif" />
       </div>
       <div v-else v-html="drawioHtml"></div>
@@ -22,6 +19,7 @@
 <script>
 import FileSaver from "file-saver";
 let markdown = window.markdownit().use(MarkdownItDrawioViewer);
+import storage from "good-storage"; // 本地存储
 export default {
   props: {
     src: "",
@@ -37,6 +35,9 @@ export default {
   },
   methods: {
     async renderDrawio() {
+      const mode = storage.get("cur_mode");
+      console.log(mode);
+
       const pre_md = await fetch(this.src).then((res) => res.text());
       let md =
         "```drawio\n" +
@@ -44,6 +45,9 @@ export default {
         pre_md +
         "\n```";
       this.drawioHtml = markdown.render(md);
+      if (mode === "dark" || mode === "read") {
+        this.drawioHtml = `<div style="background-color: #E6E6FA">${this.drawioHtml}</div>`
+      }
       await this.setDrawViewScript();
       this.loading = false;
     },
@@ -64,5 +68,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

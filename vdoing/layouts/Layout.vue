@@ -242,7 +242,7 @@ export default {
     } else {
       this.themeMode = mode;
     }
-    console.log("layout mode ", this.themeMode);
+
     storage.set("cur_mode", this.themeMode);
     this.setBodyClass();
 

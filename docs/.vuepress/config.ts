@@ -45,6 +45,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       {
+        text: '区块链',
+        link: '/blockchain/',
+        items: [
+          { text: 'Solana 开发', link: '/pages/bbcdbc/' },
+        ],
+      },
+      {
         text: '容器化',
         link: '/container/',
         items: [

@@ -1,6 +1,0 @@
-menuentry 'MyC8-x86_64' --class gnu-linux --class gnu --class os {
-  echo 'Loading kernel ...'
-  clinux /images/MyC8-x86_64/vmlinuz $k_console  net.ifnames=0 biosdevname=0  inst.ks.sendmac inst.ks=http://192.168.1.33/cblr/svc/op/autoinstall/profile/MyC8-x86_64
-  echo 'Loading initial ramdisk ...'
-  cinitrd /images/MyC8-x86_64/initrd.img
-}
